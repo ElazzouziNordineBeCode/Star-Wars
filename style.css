@@ -1,3 +1,7 @@
+/*---------------------------------------------------------------------------*/
+/*------------------------------ GENERAL SETTING ----------------------------*/
+/*---------------------------------------------------------------------------*/
+
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 
 body {
@@ -8,22 +12,42 @@ body {
 	font-family: "Poppins", sans-serif;
 }
 
+video {
+	height: 100vh;
+	width: 100vw;
+	object-fit: cover;
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	z-index: -1;
+}
+
+audio {
+	opacity: 0.2;
+}
+
 .container {
 	display: flex;
 	height: 100vh;
 	width: 60%;
 	margin: 0 auto;
-	perspective: 50px;
+	perspective: 100px;
 }
+
+/*---------------------------------------------------------------------------*/
+/*-------------------------------- TEXT SETTINGS ----------------------------*/
+/*---------------------------------------------------------------------------*/
 
 .scroll-text {
 	color: #ffc909;
-	font-size: 3vw;
+	font-size: 3rem;
 	line-height: 1.5em;
 	font-weight: bold;
 	text-align: justify;
 	position: relative;
-	animation: scroll 60s linear forwards;
+	animation: scroll 120s linear forwards;
 }
 
 h1,
@@ -31,13 +55,20 @@ h2 {
 	text-align: center;
 }
 
+/*---------------------------------------------------------------------------*/
+/*---------------------------- ANIMATION SETTINS ----------------------------*/
+/*---------------------------------------------------------------------------*/
+
 @keyframes scroll {
 	0% {
-		top: -50px;
-		transform: rotateX(20deg) translateZ(0);
+		transform: rotateX(21deg) translate3d(0, 35rem, 0);
+	}
+	95% {
+		transform: rotateX(21deg) translate3d(0, -150rem, 0);
 	}
 	100% {
-		top: -2500px;
-		transform: rotateX(20deg) translateZ(-2500px);
+		transform: rotateX(21deg) translate3d(0, -150rem, 0);
+		opacity: 0;
 	}
+
 }
